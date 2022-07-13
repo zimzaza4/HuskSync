@@ -28,8 +28,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
       - run: ./gradlew shadowJar --full-stacktrace
+      
+      - run: tree
 
       - uses: actions/upload-artifact@v2
         with:
           name: Artifacts
-          path: bin/*.jar
+          path: /*
